@@ -26,7 +26,7 @@ Output using Twig template.  Current offset has css class 'current' applied.
         <li class="first"><a href="/links/{{ p.first }}">|&lt;&lt;</a></li>
         <li class="first"><a href="/links/{{ p.prev }}">prev</a></li>
         {% for l in p.links %}
-            {% if l == p.current %}
+            {% if l == p.offset %}
                 {% set pclass = 'current' %}
             {% else %}
                 {% set pclass = '' %}
@@ -49,7 +49,7 @@ Output using PHP template.  Current offset has css class 'current' applied.
         <li class="first"><a href="/links/<?= $p.first ?>">|&lt;&lt;</a></li>
         <li class="first"><a href="/links/<?= $p.prev ?>">prev</a></li>
             <?php foreach $p.links as $l for l : ?>
-                <?php if($l == $p.current) : ?>
+                <?php if($l == $p.offset) : ?>
                     <?php $pclass = 'current'; ?>
                 <?php else : ?>
                     <?php $pclass = ''; ?>
